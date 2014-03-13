@@ -1,0 +1,178 @@
+\documentclass{beamer}
+\usepackage{hyperref}
+\usepackage{listings}
+
+\usetheme{Berlin}
+
+
+\title {{\LaTeX}}
+\subtitle{Creating professional looking 
+          documents and presentations}
+\author{Erik Edrosa}
+\institute [PLUG]{Panther Linux User Group}
+\subject{Presentation}
+\date{}
+
+
+
+
+\begin{document}
+
+\lstset{language=[LaTeX]TeX}
+  \frame{\titlepage}
+  \begin{frame}
+  \frametitle{What is \TeX?}
+  \framesubtitle{pronounced tek}
+  %content goes here
+  \begin{itemize}
+    \item a typesetting markup language
+    \item created by Donald Knuth
+    \begin{itemize}
+      \item A print of one of the volumes of The Art of Computer Programming was awful
+      \item because of the change from hot metal typesetting to photographic techniques losing the "good classic style"
+      \item intended to be compatible on all computers
+    \end{itemize}
+    \item great for typesetting complex mathimatical formula
+  \end{itemize}
+  \[ x = \frac{-b\pm \sqrt{b^2 - 4ac}}{2a} \]
+  \[\lim_{x \to \infty} \exp(-x) = 0 \]
+  \end{frame}
+  \begin{frame}
+    \frametitle{What is {\LaTeX}}
+    \framesubtitle{pronounced Lay-tek or Lah-tek}
+    \begin{itemize}
+      \item a collection of \TeX macros
+      \item allows the writer to focus on the content and not the appearance
+      \item can be extended by packages
+      \item used widely by academia for creating documents and presentations
+    \end{itemize}
+    %More content goes here
+  \end{frame}
+  \begin{frame}
+    \frametitle{Getting {\LaTeX}}
+    \begin{itemize}
+      \item Linux
+        \begin{itemize}
+          \item \TeX Live \url{http://www.tug.org/texlive/}
+          \item Check your distro for a texlive package or install from source
+        \end{itemize}
+      \item Windows
+        \begin{itemize}
+          \item MiK{\TeX}  \url{http://www.miktex.org/}
+        \end{itemize}
+      \item Mac OS
+        \begin{itemize}
+          \item Mac{\TeX} \url{http://tug.org/mactex/}
+        \end{itemize}
+      \item Online editors
+        \begin{itemize}
+          \item {\LaTeX} Lab \url{http://docs.latexlab.org/}
+          \item Share{\LaTeX} \url{https://www.sharelatex.com/}
+        \end{itemize}
+    \end{itemize}  
+  \end{frame}
+  \begin{frame}[fragile]
+    \frametitle{Basics of {\LaTeX}}
+    \framesubtitle{Simple document}
+    \begin{lstlisting}[frame=single]
+% firstDocument.tex
+\documentclass{article} 
+
+\begin{document} % Start actual document
+Hello World!
+\end{document} % finish document
+    \end{lstlisting}
+    To compile to a pdf just type pdflatex firstDocument.tex
+\end{frame}  
+\begin{frame}[fragile]
+  \frametitle{The documentclass}
+  \begin{itemize}
+      \begin{lstlisting}
+\documentclass{article}
+      \end{lstlisting}
+    \item documentclass determines what kind of document
+\begin{itemize}
+  \item article - most general document type
+  \item book - for writing real books
+  \item letter - for writing letters
+  \item beamer - for creating presentations
+  \item many, many more
+\end{itemize}
+  \end{itemize}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{The document body}
+  \begin{lstlisting}
+\begin{document}
+\end{document}
+  \end{lstlisting}
+  \begin{itemize}
+    \item enclosed within begin and end
+    \item the main content of your document goes here
+  \end{itemize}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Title pages}
+  \framesubtitle{example title mark up}
+  \lstinputlisting[firstline=7, lastline=14, basicstyle=\scriptsize]{LaTeXPresentation.tex}
+  \begin{itemize}
+    \item just use \textbackslash{}titlepage in the document
+  \end{itemize}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{itemize}
+  \framesubtitle{creating lists}
+  \lstinputlisting[firstline=94, lastline=100]{LaTeXPresentation.tex}
+  \begin{itemize}
+    \item create lists with itemize and each bullet will be an item
+    \item can even nest lists inside other lists
+  \end{itemize}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{creating sections}
+  \begin{lstlisting}
+\section{main header}
+% section content here
+\subsection{subheader}
+% subsection content here
+\subsubsection{subsubheader}
+% subsubsection content here
+\end{lstlisting}
+\begin{itemize}
+  \item define sections in your document
+  \item can even include automatic numbering
+  \item \textbackslash{}tableofcontents generates a table of contents with all sections
+\end{itemize}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Creating a presentation with beamer}
+  \framesubtitle{presentation template}
+  \lstinputlisting[basicstyle=\tiny]{presentation.tex}
+\end{frame}
+\begin{frame}
+  \frametitle{Useful resources}
+  \begin{itemize}
+    \item \href{http://latex-project.org/}{{\LaTeX} project website}
+    \item \href{http://ctan.org/}{CTAN (Comprehensive {\TeX} Archive Network)}
+    \item \href{http://en.wikibooks.org/wiki/LaTeX}{{\LaTeX} wikibook}
+    \item \href{https://www.sharelatex.com/templates/}{ShareLaTeX templates}
+  \end{itemize}
+\end{frame}
+\begin{frame}
+  \frametitle{Thank you}
+  \begin{itemize}
+    \item Questions or comments?
+    \item Contact me at eedro001@fiu.edu
+    \item visit the club's website
+      \begin{itemize}
+        \item \url{http://plug.cs.fiu.edu}
+      \end{itemize}
+    \item Join our irc channel
+      \begin{itemize}
+        \item plug.cs.fiu.edu
+        \item room \#chat
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\end{document}
